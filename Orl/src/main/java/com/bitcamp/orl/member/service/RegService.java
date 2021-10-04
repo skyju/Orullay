@@ -42,16 +42,6 @@ public class RegService {
 			String epw = aes256Util.encrypt(memberRequest.getMemberPw());
 			 member.setMemberPw(epw);
 			 dao =template.getMapper(Dao.class);
-			// AES256으로 복호화된 문자열 : select
-			String ppw = aes256Util.decrypt(epw);
-			
-			System.out.println("---------------------");
-			System.out.println("AES256 으로 암호화된 문자열");
-			System.out.println(epw);
-			System.out.println("AES256으로 복호화된 문자열");
-			System.out.println(ppw);
-			
-			
 			
 			resultCnt=dao.insertMember(member);
 			
